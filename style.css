@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --color-primary-red: hsl(0, 100%, 74%);
+  --color-primary-green: hsl(154, 59%, 51%);
+
+  --color-blue: hsl(248, 32%, 49%);
+
+  --color-dark-blue: hsl(249, 10%, 26%);
+  --color-gray-blue: hsl(246, 25%, 77%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-image: url(./images/bg-intro-desktop.png),
+    linear-gradient(rgba(255, 122, 122, 1), rgba(255, 122, 122, 1));
+  background-size: cover;
+
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  padding: 10rem 10vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+.heading {
+  font-size: 5.2rem;
+  line-height: 1;
+
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.paragraph {
+  color: #fff;
+  width: 80%;
+}
+
+.form__offer {
+  background-color: var(--color-blue);
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 1rem rgba(0, 0, 0, 0.15);
+  margin-bottom: 3rem;
+}
+
+.form__offer span {
+  font-weight: 700;
+}
+
+.form__card {
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 4rem;
+}
+
+.input-box {
+  margin-top: 2.5rem;
+  position: relative;
+}
+
+.form input {
+  display: block;
+  width: 100%;
+  padding: 1.6rem;
+  border-radius: 0.6rem;
+  border: 2px solid var(--color-gray-blue);
+  outline: none;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.form input.border-red,
+.form input.border-red:focus {
+  border: 2px solid var(--color-primary-red);
+}
+
+.form input::placeholder {
+  font-weight: 500;
+}
+
+.form input:focus {
+  border: 2px solid var(--color-dark-blue);
+}
+
+.error {
+  position: absolute;
+  top: 22%;
+  right: 2rem;
+  visibility: hidden;
+}
+
+.error.visible {
+  visibility: visible;
+}
+
+.validation-message {
+  text-align: right;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--color-primary-red);
+  display: none;
+}
+
+.validation-message.appear {
+  display: block;
+}
+
+button.submit {
+  width: 100%;
+  display: block;
+  padding: 1.6rem;
+  margin-top: 2.5rem;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--color-primary-green);
+  border-radius: 1rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0 5px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s;
+}
+
+button.submit:hover {
+  background-color: rgba(56, 204, 140, 0.7);
+}
+
+.form__paragraph {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--color-gray-blue);
+}
+
+.form__paragraph span {
+  font-weight: 700;
+  color: var(--color-primary-red);
+}
+
+@media screen and (max-width: 58.75em) {
+  .container {
+    padding: 10rem 5vw;
+
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2, max-content);
+    row-gap: 10rem;
+  }
+
+  .container__text {
+    text-align: center;
+  }
+
+  .heading {
+    font-size: 3.2rem;
+  }
+
+  .paragraph {
+    width: 100%;
+  }
+
+  .form__card {
+    padding: 2rem;
+    font-size: 1.4rem;
+  }
+
+  .form__paragraph {
+    width: 90%;
+    margin: 1.5rem auto 0;
+  }
+}
+
+@media screen and (max-width: 37.5em) {
+  body {
+    background-image: url(./images/bg-intro-mobile.png),
+      linear-gradient(rgba(255, 122, 122, 1), rgba(255, 122, 122, 1));
+    background-size: cover;
+  }
+}
